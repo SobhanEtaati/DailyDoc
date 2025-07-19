@@ -9,10 +9,6 @@ load_dotenv()
 # Configure Gemini API
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-# Initialize the model and the chat session once
-#model = genai.chat(model="gemini-1.5-flash", prompt=build_system_prompt())
-
-
 model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 chat = model.start_chat(history=[
     {"role": "user", "parts": [build_system_prompt()]}
